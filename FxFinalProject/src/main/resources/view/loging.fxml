@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="logingPageAnchorPane" prefHeight="660.0" prefWidth="940.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LogingController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a3d3ff" height="666.0" layoutX="-1.0" layoutY="-2.0" stroke="WHITE" strokeType="INSIDE" width="470.0" />
+      <Text layoutX="118.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ThogaKade">
+         <font>
+            <Font name="System Bold" size="40.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="664.0" layoutX="469.0" stroke="WHITE" strokeType="INSIDE" width="470.0" />
+      <Text layoutX="518.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome Back">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="518.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Please enter your credentials to access to the system">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Text layoutX="518.0" layoutY="219.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" wrappingWidth="90.13671875">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="159.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/1.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="82.0" layoutY="290.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your retails business with a modern and efficient ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="142.0" layoutY="320.0" strokeType="OUTSIDE" strokeWidth="0.0" text="inventory mangement system">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="264.0" fitWidth="484.0" layoutX="31.0" layoutY="373.0" opacity="0.79" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/gocery.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txtUserName" layoutX="517.0" layoutY="237.0" prefHeight="30.0" prefWidth="368.0" promptText="Enter Your username here..">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Text layoutX="518.0" layoutY="310.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="90.13671875">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtPassword" layoutX="517.0" layoutY="326.0" prefHeight="30.0" prefWidth="368.0" promptText="Enter your password here..">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="855.0" layoutY="243.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/user.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="855.0" layoutY="332.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/padlock.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="539.0" layoutY="446.0" onAction="#btnLogingOnAction" prefHeight="42.0" prefWidth="330.0" style="-fx-background-color: #1e90ff;" text="Loging" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="19.0" fitWidth="24.0" layoutX="741.0" layoutY="458.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/check-in.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

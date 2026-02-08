@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="594.0" prefWidth="940.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerPageController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ececec" height="624.0" stroke="WHITE" strokeType="INSIDE" width="940.0" />
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="600.0" layoutX="14.0" layoutY="15.0" stroke="WHITE" strokeType="INSIDE" width="265.0" />
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="600.0" layoutX="287.0" layoutY="15.0" stroke="WHITE" strokeType="INSIDE" width="653.0" />
+      <TableView fx:id="tblCustomerDetails" layoutX="294.0" layoutY="179.0" prefHeight="418.0" prefWidth="644.0" stylesheets="@../css/Table.css">
+        <columns>
+          <TableColumn fx:id="colId" prefWidth="65.60003662109375" text="ID" />
+          <TableColumn fx:id="colName" prefWidth="105.60003662109375" text="Name" />
+            <TableColumn fx:id="colDOB" prefWidth="96.79998779296875" text="DOB" />
+            <TableColumn fx:id="colSalary" prefWidth="88.79998779296875" text="Salary" />
+            <TableColumn fx:id="colAddress" prefWidth="120.0" text="Address" />
+            <TableColumn fx:id="colCity" text="City" />
+            <TableColumn fx:id="colPostalCode" prefWidth="93.5999755859375" text="PostalCode" />
+            <TableColumn fx:id="colProvince" prefWidth="93.5999755859375" text="Province" />
+        </columns>
+      </TableView>
+      <Text layoutX="34.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer Details">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Line endX="137.4000244140625" endY="-7.62939453125E-6" layoutX="125.0" layoutY="72.0" startX="-100.0" stroke="#cccccc" />
+      <Text fill="#acacac" layoutX="26.0" layoutY="300.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ADDRESS">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtAddress" layoutX="24.0" layoutY="311.0" prefHeight="26.0" prefWidth="242.0" promptText="123,Walana,Panadura" />
+      <Text fill="#acacac" layoutX="26.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CUSTOMER ID">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtCustId" layoutX="24.0" layoutY="119.0" prefHeight="26.0" prefWidth="116.0" promptText="C999" />
+      <Text fill="#acacac" layoutX="26.0" layoutY="167.0" strokeType="OUTSIDE" strokeWidth="0.0" text="CUSTOMER NAME">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtCustName" layoutX="24.0" layoutY="178.0" prefHeight="26.0" prefWidth="242.0" promptText="Saman Sumathi" />
+      <Text fill="#acacac" layoutX="155.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TITLE" wrappingWidth="27.7222900390625">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="cmbTitle" layoutX="153.0" layoutY="119.0" prefHeight="26.0" prefWidth="116.0" promptText="Select Title" />
+      <Text fill="#acacac" layoutX="25.0" layoutY="232.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DATE OF BIRTH">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Text>
+      <DatePicker fx:id="dateDOB" layoutX="24.0" layoutY="244.0" prefHeight="26.0" prefWidth="116.0" promptText="dd/mm/yyyy" />
+      <Text fill="#acacac" layoutX="153.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SALARY (LKR)">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtSalary" layoutX="152.0" layoutY="243.0" prefHeight="26.0" prefWidth="116.0" promptText="55000.00" />
+      <Text fill="#acacac" layoutX="26.0" layoutY="365.0" strokeType="OUTSIDE" strokeWidth="0.0" text="C I T Y" wrappingWidth="36.53790283203125">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtCity" layoutX="24.0" layoutY="375.0" prefHeight="26.0" prefWidth="116.0" promptText="Panadura" />
+      <Text fill="#acacac" layoutX="153.0" layoutY="362.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PROVINCE">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Text>
+      <ComboBox fx:id="cmbProvince" layoutX="152.0" layoutY="375.0" prefHeight="26.0" prefWidth="116.0" promptText="Select Western" />
+      <Text fill="#acacac" layoutX="28.0" layoutY="423.0" strokeType="OUTSIDE" strokeWidth="0.0" text="POSTAL CODE">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtPostalCode" layoutX="26.0" layoutY="434.0" prefHeight="26.0" prefWidth="242.0" promptText="10400" />
+      <JFXButton layoutX="23.0" layoutY="527.0" onAction="#btnCustAddOnAction" prefHeight="35.0" prefWidth="116.0" style="-fx-background-color: #2ed573;" text="ADD" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="151.0" layoutY="527.0" onAction="#btnCustUpdateOnAction" prefHeight="35.0" prefWidth="116.0" style="-fx-background-color: #ffa502;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="23.0" layoutY="575.0" onAction="#btnCustDeleteOnAction" prefHeight="35.0" prefWidth="116.0" style="-fx-background-color: #ff6348;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="151.0" layoutY="575.0" onAction="#btnClearOnAction" prefHeight="35.0" prefWidth="116.0" style="-fx-background-color: #747d8c;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="21.0" fitWidth="28.0" layoutX="27.0" layoutY="534.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/add-user.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="28.0" layoutX="27.0" layoutY="582.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/bin.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="156.0" layoutY="534.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/pen.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="21.0" fitWidth="28.0" layoutX="155.0" layoutY="582.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/paintbrush.png" />
+         </image>
+      </ImageView>
+      <Text layoutX="293.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Customer DataBase">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fill="#636363" layoutX="294.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage and browse all registered customers  . .">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtCustsearchValue" layoutX="431.0" layoutY="114.0" prefHeight="35.0" prefWidth="213.0" promptText="Enter Here What You Searching .." />
+      <ComboBox fx:id="cmbCustomerSearchBy" layoutX="294.0" layoutY="114.0" prefHeight="35.0" prefWidth="128.0" promptText="Find By .." />
+      <Text fill="#636363" layoutX="294.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Find Customer BY">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Text>
+      <Line endX="480.60003662109375" endY="-7.62939453125E-6" layoutX="421.0" layoutY="84.0" startX="-100.0" stroke="#cccccc" />
+      <JFXButton layoutX="655.0" layoutY="114.0" onAction="#btnCustomerSearchOnAction" prefHeight="35.0" prefWidth="102.0" style="-fx-background-color: #1e90ff;" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="21.0" fitWidth="28.0" layoutX="663.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/loupe.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="24.0" layoutY="479.0" onAction="#btnCustomerSearchToDeleteAndUpdateOnAction" prefHeight="35.0" prefWidth="242.0" style="-fx-background-color: #1e90ff;" text="Search(Enter ID To Update &amp; Delete)" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="13.0" fitWidth="14.0" layoutX="26.0" layoutY="490.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/loupe.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="765.0" layoutY="114.0" onAction="#btnReloadTableOnAction" prefHeight="35.0" prefWidth="162.0" style="-fx-background-color: #ffa502;" text="Load All Customers" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </JFXButton>
+      <ImageView fitHeight="21.0" fitWidth="28.0" layoutX="769.0" layoutY="122.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/rotate.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
