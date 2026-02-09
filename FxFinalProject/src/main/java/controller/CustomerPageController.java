@@ -273,6 +273,7 @@ public class CustomerPageController implements Initializable {
 
     @FXML
     void btnCustomerSearchOnAction(ActionEvent event) {
+        System.out.println(cmbCustomerSearchBy.getValue().toString());
         String searchOp=cmbCustomerSearchBy.getValue().toString();
         if(searchOp.equals("Id")||searchOp.equals("Name")||searchOp.equals("City")){
             try {
@@ -387,6 +388,7 @@ public class CustomerPageController implements Initializable {
     public void btnReloadTableOnAction(ActionEvent actionEvent) {
         loadAllCustomerToTable();
         new Alert(Alert.AlertType.INFORMATION, "Table Refreshed !!").show();
+        clearFields();
     }
 
     @FXML
