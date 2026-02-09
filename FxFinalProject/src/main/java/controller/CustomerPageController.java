@@ -15,13 +15,9 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class CustomerPageController implements Initializable {
-
-
 
     @FXML
     private ComboBox cmbCustomerSearchBy;
@@ -541,8 +537,6 @@ public class CustomerPageController implements Initializable {
             throw new RuntimeException(e);
         }
     }
-
-
 
 
 }
