@@ -288,6 +288,7 @@ public class ItemPageController implements Initializable {
 
                 loadItemTable();
                 clearFields();
+                
 
                 if (psTM.executeUpdate() > 0) {
                     new Alert(Alert.AlertType.INFORMATION, "Item Update Success !!").show();

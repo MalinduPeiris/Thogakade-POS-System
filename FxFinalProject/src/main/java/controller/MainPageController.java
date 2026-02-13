@@ -85,6 +85,19 @@ public class MainPageController implements Initializable {
                 "-fx-background-color:  #1e90ff; " +
                         "-fx-text-fill: white;"
         );
+
+        try {
+            URL resource = this.getClass().getResource("/view/orderDetails.fxml");
+
+            assert resource!=null;
+
+            Parent parent = FXMLLoader.load(resource);
+            pagesAnchorPane.getChildren().clear();
+            pagesAnchorPane.getChildren().add(parent);
+
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
