@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="685.0" prefWidth="1238.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainPageComponentsController">
+    <children>
+        <AnchorPane fx:id="pagesAnchorPane" prefHeight="688.0" prefWidth="1238.0">
+            <children>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="165.0" layoutX="102.0" layoutY="37.0" stroke="#e7e7e7" strokeType="INSIDE" width="200.0" />
+                <Text fill="#969696" layoutX="141.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Customers" textAlignment="CENTER" wrappingWidth="121.33674621582031">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+                <Text fx:id="lblTotCustomer" layoutX="136.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1284" textAlignment="CENTER" wrappingWidth="131.20000000000005">
+                    <font>
+                        <Font name="System Bold" size="29.0" />
+                    </font>
+                </Text>
+                <ImageView fitHeight="48.0" fitWidth="72.0" layoutX="177.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/public-relation.png" />
+                    </image>
+                </ImageView>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="165.0" layoutX="370.0" layoutY="37.0" stroke="#e7e7e7" strokeType="INSIDE" width="200.0" />
+                <Text fill="#969696" layoutX="422.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Items" textAlignment="CENTER" wrappingWidth="95.73675537109375">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+                <Text fx:id="lblTotItems" layoutX="404.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" text="450" textAlignment="CENTER" wrappingWidth="131.20000000000005">
+                    <font>
+                        <Font name="System Bold" size="29.0" />
+                    </font>
+                </Text>
+                <ImageView fitHeight="48.0" fitWidth="72.0" layoutX="445.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/price.png" />
+                    </image>
+                </ImageView>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="162.0" layoutX="669.0" layoutY="39.0" stroke="#e7e7e7" strokeType="INSIDE" width="200.0" />
+                <Text fill="#969696" layoutX="721.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Today Orders" textAlignment="CENTER" wrappingWidth="95.73675537109375">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+                <Text fx:id="lblTotOrders" layoutX="703.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1284" textAlignment="CENTER" wrappingWidth="131.20000000000005">
+                    <font>
+                        <Font name="System Bold" size="29.0" />
+                    </font>
+                </Text>
+                <ImageView fitHeight="48.0" fitWidth="72.0" layoutX="744.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/public-relation.png" />
+                    </image>
+                </ImageView>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="161.0" layoutX="929.0" layoutY="40.0" stroke="#e7e7e7" strokeType="INSIDE" width="200.0" />
+                <Text fill="#969696" layoutX="960.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Sales ( Today )" textAlignment="CENTER" wrappingWidth="138.93682861328125">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+                <Text fx:id="lblTotSales" layoutX="963.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1284" textAlignment="CENTER" wrappingWidth="131.20000000000005">
+                    <font>
+                        <Font name="System Bold" size="29.0" />
+                    </font>
+                </Text>
+                <ImageView fitHeight="48.0" fitWidth="72.0" layoutX="1005.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../img/dollar.png" />
+                    </image>
+                </ImageView>
+                <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="446.0" layoutX="45.0" layoutY="222.0" stroke="#e7e7e7" strokeType="INSIDE" width="1153.0" />
+                <Text layoutX="57.0" layoutY="263.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Low Quantity Stocks" wrappingWidth="251.9999420166016">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                </Text>
+                <TableView fx:id="tblMainPgItem" layoutX="198.0" layoutY="304.0" prefHeight="335.0" prefWidth="862.0" stylesheets="@../css/Table.css">
+                    <columns>
+                        <TableColumn fx:id="colID" prefWidth="92.79999160766602" text="ITEM ID" />
+                        <TableColumn fx:id="colProduct" prefWidth="274.40000915527344" text="PRODUCT " />
+                        <TableColumn fx:id="colUnitPrice" prefWidth="169.5999755859375" text="UNIT PRICE" />
+                        <TableColumn fx:id="colQtyOnHand" prefWidth="158.39990234375" text="QTY ON HAND" />
+                        <TableColumn fx:id="colSoldQty" prefWidth="145.60001220703123" text="TOTAL SOLD QTY" />
+                    </columns>
+                </TableView>
+            </children></AnchorPane>
+    </children>
+</AnchorPane>

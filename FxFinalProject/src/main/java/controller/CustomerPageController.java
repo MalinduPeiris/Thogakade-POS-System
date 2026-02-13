@@ -15,13 +15,9 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
-import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class CustomerPageController implements Initializable {
-
-
 
     @FXML
     private ComboBox cmbCustomerSearchBy;
@@ -273,6 +269,7 @@ public class CustomerPageController implements Initializable {
 
     @FXML
     void btnCustomerSearchOnAction(ActionEvent event) {
+        System.out.println(cmbCustomerSearchBy.getValue().toString());
         String searchOp=cmbCustomerSearchBy.getValue().toString();
         if(searchOp.equals("Id")||searchOp.equals("Name")||searchOp.equals("City")){
             try {
@@ -387,6 +384,7 @@ public class CustomerPageController implements Initializable {
     public void btnReloadTableOnAction(ActionEvent actionEvent) {
         loadAllCustomerToTable();
         new Alert(Alert.AlertType.INFORMATION, "Table Refreshed !!").show();
+        clearFields();
     }
 
     @FXML
@@ -539,8 +537,6 @@ public class CustomerPageController implements Initializable {
             throw new RuntimeException(e);
         }
     }
-
-
 
 
 }
