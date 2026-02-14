@@ -218,10 +218,11 @@ public class CustomerPageController implements Initializable {
         String name=txtCustName.getText();
         String address=txtAddress.getText();
         String city=txtCity.getText();
+        LocalDate date=dateDOB.getValue();
         String postalCode=txtPostalCode.getText();
 
-        if(!id.isEmpty() && !name.isEmpty() && !address.isEmpty() && !city.isEmpty() &&
-                !postalCode.isEmpty()) {
+        if(!id.isEmpty() && !name.isEmpty() && !address.isEmpty() &&
+                !city.isEmpty() && !postalCode.isEmpty() && date != null) {
 
             try {
                 Connection connection = DBConnection.getInstance().getConnection();
@@ -231,8 +232,6 @@ public class CustomerPageController implements Initializable {
                                 ", City=?, Province=?, PostalCode=? WHERE CustID=?"
                 );
 
-
-                LocalDate date = dateDOB.getValue();
                 double salary=Double.parseDouble(txtSalary.getText());
                 String title=cmbTitle.getValue().toString();
                 String province=cmbProvince.getValue().toString();
@@ -269,7 +268,6 @@ public class CustomerPageController implements Initializable {
 
     @FXML
     void btnCustomerSearchOnAction(ActionEvent event) {
-        System.out.println(cmbCustomerSearchBy.getValue().toString());
         String searchOp=cmbCustomerSearchBy.getValue().toString();
         if(searchOp.equals("Id")||searchOp.equals("Name")||searchOp.equals("City")){
             try {
@@ -397,6 +395,30 @@ public class CustomerPageController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         setComboBoxes();
         loadAllCustomerToTable();
+
+
+        tblCustomerDetails.getSelectionModel().selectedItemProperty().addListener((observableValue, o, t1) -> {
+
+            assert t1 != null;
+
+            CustomerTM customerTM = (CustomerTM) t1;
+
+            Customer customer = new Customer(
+                    customerTM.getId(),
+                    customerTM.getName(),
+                    customerTM.getName(),
+                    customerTM.getDate(),
+                    customerTM.getSalary(),
+                    customerTM.getAddress(),
+                    customerTM.getCity(),
+                    customerTM.getProvince(),
+                    customerTM.getPostalCode()
+            );
+
+            setTextValuesforSearch(customer);
+        });
+
+
     }
 
     private void setComboBoxes(){
@@ -491,6 +513,7 @@ public class CustomerPageController implements Initializable {
         txtCustId.setText(customer.getId());
         cmbTitle.setValue(customer.getTitle());
         txtCustName.setText(customer.getName());
+        System.out.println(customer.getDate()+" ekakk");
         dateDOB.setValue(customer.getDate());
         txtSalary.setText(customer.getSalary()+"");
         txtAddress.setText(customer.getAddress());

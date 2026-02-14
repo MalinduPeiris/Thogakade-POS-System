@@ -415,5 +415,23 @@ public class ItemPageController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         loadItemTable();
         setComboBoxes();
+
+
+        tblItemDetails.getSelectionModel().selectedItemProperty().addListener((observableValue, o, t1) -> {
+
+            assert t1 != null;
+
+            ItemTM itemTM = (ItemTM) t1;
+
+            Item item = new Item(
+                    itemTM.getId(),
+                    itemTM.getDescription(),
+                    itemTM.getPackSize(),
+                    itemTM.getUnitPrice(),
+                    itemTM.getQtyOnHand()
+            );
+
+            setTextValuesforSearch(item);
+        });
     }
 }

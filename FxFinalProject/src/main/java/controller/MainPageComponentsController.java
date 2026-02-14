@@ -140,7 +140,6 @@ public class MainPageComponentsController implements Initializable {
             psTM2.setObject(1,date);
             ResultSet resultSetForTodayTotSale = psTM2.executeQuery();
             resultSetForTodayTotSale.next();
-            System.out.println(resultSetForTodayTotSale.getString(1));
             lblTotSales.setText(
                     resultSetForTodayTotSale.getString(1)==null ? "Rs. 0.00"
                             : resultSetForTodayTotSale.getString(1)

@@ -19,15 +19,16 @@
       <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="483.0" layoutX="13.0" layoutY="194.0" stroke="WHITE" strokeType="INSIDE" width="287.0" />
       <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="169.0" layoutX="14.0" layoutY="17.0" stroke="WHITE" strokeType="INSIDE" width="287.0" />
       <Rectangle arcHeight="20.0" arcWidth="20.0" fill="WHITE" height="387.0" layoutX="312.0" layoutY="15.0" stroke="WHITE" strokeType="INSIDE" width="912.0" />
-      <TableView fx:id="tblOrderDetails" layoutX="327.0" layoutY="152.0" prefHeight="215.0" prefWidth="886.0" stylesheets="@../css/Table.css">
+      <TableView fx:id="tblOrderDetails" layoutX="327.0" layoutY="152.0" prefHeight="215.0" prefWidth="887.0" stylesheets="@../css/Table.css">
         <columns>
           <TableColumn fx:id="colOrderId" prefWidth="78.13330078125" text="ORDER ID" />
-          <TableColumn fx:id="colCustomerID" prefWidth="94.66665649414062" text="CUSOMER ID" />
-            <TableColumn fx:id="colCustomerName" prefWidth="149.3333740234375" text="CUSTOMER NAME" />
-            <TableColumn fx:id="colOrderDate" prefWidth="135.20001220703125" text="ORDER DATE" />
-            <TableColumn fx:id="colOrderItems" prefWidth="233.60003662109375" text="ORDER ITEMS" />
-            <TableColumn fx:id="colItemQty" prefWidth="69.33331298828125" text="ITEM QTY" />
-            <TableColumn fx:id="colTotal" prefWidth="115.4666748046875" text="TOTAL COST ( RS. )" />
+          <TableColumn fx:id="colCustomerID" prefWidth="83.20001220703125" text="CUSOMER ID" />
+            <TableColumn fx:id="colCustomerName" prefWidth="117.59991455078125" text="CUSTOMER NAME" />
+            <TableColumn fx:id="colOrderDate" prefWidth="117.60003662109375" text="ORDER DATE" />
+            <TableColumn fx:id="colOrderItems" prefWidth="220.79998779296875" text="ORDER ITEMS" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="80.00006103515625" text="UNIT PRICE" />
+            <TableColumn fx:id="colItemQty" prefWidth="62.40008544921875" text="ITEM QTY" />
+            <TableColumn fx:id="colTotalCost" prefWidth="124.800048828125" text="TOT COST (Rs.)" />
         </columns>
       </TableView>
       <Text layoutX="57.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Order Details">
@@ -40,7 +41,7 @@
             <Font size="14.0" />
          </font>
       </Text>
-      <TextField fx:id="txtOrderID" layoutX="23.0" layoutY="77.0" prefHeight="30.0" prefWidth="128.0" promptText="D000">
+      <TextField fx:id="txtOrderID" disable="true" layoutX="23.0" layoutY="77.0" prefHeight="30.0" prefWidth="128.0" promptText="D000">
          <font>
             <Font size="14.0" />
          </font></TextField>
