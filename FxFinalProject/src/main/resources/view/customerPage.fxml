@@ -51,7 +51,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="txtCustId" layoutX="24.0" layoutY="119.0" prefHeight="26.0" prefWidth="119.0" promptText="C999">
+      <TextField fx:id="txtCustId" disable="true" layoutX="24.0" layoutY="119.0" prefHeight="26.0" prefWidth="119.0" promptText="C000">
          <font>
             <Font size="13.0" />
          </font></TextField>
@@ -105,7 +105,7 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Text>
-      <TextField fx:id="txtPostalCode" layoutX="24.0" layoutY="463.0" prefHeight="27.0" prefWidth="256.0" promptText="10400">
+      <TextField fx:id="txtPostalCode" layoutX="24.0" layoutY="463.0" prefHeight="27.0" prefWidth="256.0" promptText="00000">
          <font>
             <Font size="13.0" />
          </font></TextField>

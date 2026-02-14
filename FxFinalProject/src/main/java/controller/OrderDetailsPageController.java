@@ -352,7 +352,7 @@ public class OrderDetailsPageController implements Initializable {
 
         String id = orderIDList.get(orderIDList.size()-1);
         int lastOrderID = Integer.parseInt(id.substring(1));
-        txtOrderID.setText(lastOrderID>9 ? "D0"+(lastOrderID+2) : "D00"+(lastOrderID+2));
+        txtOrderID.setText(lastOrderID>9 ? "D0"+(lastOrderID+1) : "D00"+(lastOrderID+1));
 
     }
 
@@ -373,18 +373,20 @@ public class OrderDetailsPageController implements Initializable {
 
             OrderDetailsTM orderDetailsTM = (OrderDetailsTM) t1;
 
-            OrderDetails orderDetails = new OrderDetails(
-                    orderDetailsTM.getOrderID(),
-                    orderDetailsTM.getCustomerID(),
-                    orderDetailsTM.getCustomerName(),
-                    orderDetailsTM.getOrderDate(),
-                    orderDetailsTM.getOrderItems(),
-                    orderDetailsTM.getUnitPrice(),
-                    orderDetailsTM.getOrderQty(),
-                    orderDetailsTM.getTotalCost()
-            );
+            if (orderDetailsTM!=null) {
+                OrderDetails orderDetails = new OrderDetails(
+                        orderDetailsTM.getOrderID(),
+                        orderDetailsTM.getCustomerID(),
+                        orderDetailsTM.getCustomerName(),
+                        orderDetailsTM.getOrderDate(),
+                        orderDetailsTM.getOrderItems(),
+                        orderDetailsTM.getUnitPrice(),
+                        orderDetailsTM.getOrderQty(),
+                        orderDetailsTM.getTotalCost()
+                );
 
-            setTextValues(orderDetails);
+                setTextValues(orderDetails);
+            }
         });
     }
 

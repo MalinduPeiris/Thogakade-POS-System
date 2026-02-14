@@ -422,16 +422,43 @@ public class ItemPageController implements Initializable {
             assert t1 != null;
 
             ItemTM itemTM = (ItemTM) t1;
+            if (itemTM!=null) {
+                Item item = new Item(
+                        itemTM.getId(),
+                        itemTM.getDescription(),
+                        itemTM.getPackSize(),
+                        itemTM.getUnitPrice(),
+                        itemTM.getQtyOnHand()
+                );
 
-            Item item = new Item(
-                    itemTM.getId(),
-                    itemTM.getDescription(),
-                    itemTM.getPackSize(),
-                    itemTM.getUnitPrice(),
-                    itemTM.getQtyOnHand()
-            );
-
-            setTextValuesforSearch(item);
+                setTextValuesforSearch(item);
+            }
         });
+        generateOrderID();
     }
+
+    private void generateOrderID(){
+        ArrayList<String> itemIDList=new ArrayList<>();
+
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+            Statement statement = connection.createStatement();
+
+            ResultSet resultSetForItemIDs = statement.executeQuery("SELECT * from Item");
+
+            while (resultSetForItemIDs.next()){
+                itemIDList.add(resultSetForItemIDs.getString(1));
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        String id = itemIDList.get(itemIDList.size()-1);
+        int lastItemID = Integer.parseInt(id.substring(1));
+        txtItemCode.setText(lastItemID>9 ? "P0"+(lastItemID+1) : "P00"+(lastItemID+1));
+
+    }
+
 }

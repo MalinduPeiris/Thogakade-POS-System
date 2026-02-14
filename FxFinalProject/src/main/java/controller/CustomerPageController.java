@@ -121,8 +121,9 @@ public class CustomerPageController implements Initializable {
                 if (psTM.executeUpdate() > 0) {
                     new Alert(Alert.AlertType.INFORMATION, "Customer Added Success !!").show();
                     clearFields();
+                    loadAllCustomerToTable();
                 } else {
-                    new Alert(Alert.AlertType.INFORMATION, "Customer Added Denied !!").show();
+                    new Alert(Alert.AlertType.WARNING, "Customer Added Denied !!").show();
                 }
 
 
@@ -192,15 +193,16 @@ public class CustomerPageController implements Initializable {
                 try {
                     Connection connection = DBConnection.getInstance().getConnection();
 
-                    PreparedStatement psTM = connection.prepareStatement("DELETE From customer WHERE id=?");
+                    PreparedStatement psTM = connection.prepareStatement("DELETE From customer WHERE CustId=?");
 
                     psTM.setString(1,id);
 
                     if(psTM.executeUpdate()>0){
-                        new Alert(Alert.AlertType.ERROR,"Customer "+name+" Delete Successfully !!").show();
+                        new Alert(Alert.AlertType.INFORMATION,"Customer "+name+" Delete Successfully !!").show();
                         clearFields();
+                        loadAllCustomerToTable();
                     }else {
-                        new Alert(Alert.AlertType.ERROR,"Customer "+name+" Delete Denied !!").show();
+                        new Alert(Alert.AlertType.WARNING,"Customer "+name+" Delete Denied !!").show();
                     }
 
                 } catch (SQLException e) {
@@ -250,8 +252,9 @@ public class CustomerPageController implements Initializable {
                 if (psTM.executeUpdate() > 0) {
                     new Alert(Alert.AlertType.INFORMATION, "Customer Update Success !!").show();
                     clearFields();
+                    loadAllCustomerToTable();
                 } else {
-                    new Alert(Alert.AlertType.INFORMATION, "Customer Update Denied !!").show();
+                    new Alert(Alert.AlertType.WARNING, "Customer Update Denied !!").show();
                 }
 
 
@@ -396,27 +399,31 @@ public class CustomerPageController implements Initializable {
         setComboBoxes();
         loadAllCustomerToTable();
 
-
         tblCustomerDetails.getSelectionModel().selectedItemProperty().addListener((observableValue, o, t1) -> {
 
             assert t1 != null;
 
             CustomerTM customerTM = (CustomerTM) t1;
 
-            Customer customer = new Customer(
-                    customerTM.getId(),
-                    customerTM.getName(),
-                    customerTM.getName(),
-                    customerTM.getDate(),
-                    customerTM.getSalary(),
-                    customerTM.getAddress(),
-                    customerTM.getCity(),
-                    customerTM.getProvince(),
-                    customerTM.getPostalCode()
-            );
+            if (customerTM!=null) {
 
-            setTextValuesforSearch(customer);
+                Customer customer = new Customer(
+                        customerTM.getId(),
+                        customerTM.getName(),
+                        customerTM.getName(),
+                        customerTM.getDate(),
+                        customerTM.getSalary(),
+                        customerTM.getAddress(),
+                        customerTM.getCity(),
+                        customerTM.getProvince(),
+                        customerTM.getPostalCode()
+                );
+
+                setTextValuesforSearch(customer);
+            }
         });
+
+        generateCustomerID();
 
 
     }
@@ -559,6 +566,30 @@ public class CustomerPageController implements Initializable {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    private void generateCustomerID(){
+        ArrayList<String> customerIDList=new ArrayList<>();
+
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+            Statement statement = connection.createStatement();
+
+            ResultSet resultSetForCustomerIDs = statement.executeQuery("SELECT * from customer");
+
+            while (resultSetForCustomerIDs.next()){
+                customerIDList.add(resultSetForCustomerIDs.getString(1));
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        String id = customerIDList.get(customerIDList.size()-1);
+        int lastOrderID = Integer.parseInt(id.substring(1));
+        txtCustId.setText(lastOrderID>9 ? "C0"+(lastOrderID+1) : "C00"+(lastOrderID+1));
+
     }
 
 
